@@ -1,0 +1,85 @@
+header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 2.986rem;
+}
+
+header h2 {
+    font-size: 2.488rem;
+}
+
+.chamada {
+    text-align: center;
+}
+
+.head-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+span {
+    color: var(--secondary-color);
+    font-size: 2.986rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    padding: .8rem 0;
+    width: 100%;
+}
+
+.buttons .btn {
+    cursor: pointer;
+    padding: .8rem 1.8rem;
+    font-size: 2.074rem;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 2rem;
+}
+
+.btn-secondary {
+    border: 3px solid var(--tertiary-color) !important;
+    background: none !important;
+    color: var(--primary-color) !important;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.728rem;
+
+    }
+    
+    header h2 {
+        font-size: 1.728rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .buttons .btn {
+        padding: .5rem 1rem;
+        font-size: 1.44rem;
+    }
+    .chamada {
+        text-align: start;
+    }
+}
