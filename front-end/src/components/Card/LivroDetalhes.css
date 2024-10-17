@@ -1,0 +1,53 @@
+.conteiner-detalhe {
+    display: flex;
+    padding: 2rem;
+    margin: 1rem;
+    border: 2px solid #000;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.conteiner-livro {
+    padding: 0 1rem;
+}
+
+.conteiner-livro .titulo {
+    padding: 0 0 1rem 0;
+}
+.conteiner-livro .titulo h1 {
+    font-size: 2rem;
+}
+
+.conteiner-livro .titulo p {
+    text-decoration: underline;
+}
+
+.conteiner-detalhe img {
+    height: 75vh;
+}
+
+.disponivel {
+    color: green;
+}
+
+.indisponivel {
+    color: red
+}
+
+.infos-livro {
+    padding: .5rem 0;
+}
+
+.infos-livro p {
+    display: flex;
+}
+
+@media screen and (max-width: 660px) {
+    .conteiner-detalhe {
+        flex-direction: column;
+    }
+
+    .conteiner-detalhe img {
+        height: 50vh;
+    }
+}

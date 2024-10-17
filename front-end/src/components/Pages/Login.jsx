@@ -13,6 +13,14 @@ export default function Login() {
     axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!values.email.includes('@')) {
+            alert('Por favor, insira um email válido.');
+            return;
+        }
+        if (values.password.length < 5) {
+            alert('A senha deve ter pelo menos 5 caracteres.');
+            return;
+        }
         axios.post('http://localhost:8088/Login', values)
         .then(res => {
             if (res.data.Status === "Success") {
@@ -21,7 +29,10 @@ export default function Login() {
                 alert(res.data.Message);
             }
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            alert('Erro no servidor. Tente novamente mais tarde.');
+        });
     };
 
     return (

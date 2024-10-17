@@ -47,6 +47,7 @@ span {
     color: var(--white);
     border: none;
     border-radius: 2rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .btn-secondary {
@@ -59,6 +60,26 @@ span {
     transform: scale(1.03);
     transition: 0.5s;
 }
+
+.modal {
+    background: white;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }  
 
 @media (max-width: 600px) {
     header h1 {

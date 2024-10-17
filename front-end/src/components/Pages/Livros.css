@@ -1,0 +1,139 @@
+.conteiner {
+  display: flex;
+  justify-content: space-between;
+  padding: .8rem .5rem;
+}
+
+.conteiner h1 {
+  font-size: 2rem;
+}
+
+.conteiner input {
+  padding: .2rem .8rem;
+  border-radius: 2rem;
+  border: 1px solid #CCC;
+}
+
+/* Estilo de paginação semelhante à imagem fornecida */
+.pagination {
+  display: flex;
+  justify-content: end;
+  list-style: none;
+  padding: .8rem;
+  margin-top: 20px;
+}
+
+.pagination li {
+  margin: 0 2px;
+}
+
+.pagination button {
+  color: var(--primary-color);
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination .active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--tertiary-color);
+}
+
+/* CSS Responsivo */
+
+/* Telas grandes (desktop) */
+@media (min-width: 1024px) {
+  .conteiner {
+    padding: 1.2rem 1rem;
+  }
+
+  .conteiner h1 {
+    font-size: 2.5rem;
+  }
+
+  .conteiner input {
+    padding: .4rem 1rem;
+    border-radius: 2.5rem;
+  }
+
+  .pagination button {
+    padding: 12px 24px;
+  }
+
+  .pagination span {
+    font-size: 18px;
+  }
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .conteiner {
+    padding: 1rem .8rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .conteiner h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .conteiner input {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1rem;
+    padding: .3rem 1rem;
+  }
+
+  .pagination button {
+    padding: 10px 20px;
+    margin: 0 3px;
+  }
+
+  .pagination span {
+    font-size: 16px;
+  }
+}
+
+/* Telas pequenas (smartphones) */
+@media (max-width: 767px) {
+  .conteiner {
+    flex-direction: column;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .conteiner h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .conteiner input {
+    width: 100%;
+    padding: .5rem;
+    border-radius: 1.5rem;
+  }
+
+  .text p {
+    font-size: .8rem !important;
+  }
+
+  .pagination button {
+    padding: 8px 16px;
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  .pagination span {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+}

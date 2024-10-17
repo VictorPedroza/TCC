@@ -1,0 +1,9 @@
+.accordion-button {
+    cursor: pointer;
+    padding: 1rem;
+    display: flex;
+}
+
+.accordion-content {
+    padding: 1.2rem;
+}

@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Card.css';
 
 export default function Card({ categoria }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = (livro) => {
+    navigate(`/livro/${livro.id}`, { state: { livro } });
+  };
+
   return (
     <div className="livros-container">
       <div className="card-container">
@@ -9,6 +16,7 @@ export default function Card({ categoria }) {
           <div 
             key={index} 
             className="livro-card"
+            onClick={() => handleCardClick(livro)}
           >
             <img className="img" src={livro.imagem} alt={livro.Nome} />
             <div className="text">
