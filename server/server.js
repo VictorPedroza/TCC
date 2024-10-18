@@ -12,23 +12,29 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://https://tcc-umber.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true
 }));
 app.use(helmet());
 
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "biblioteca"
-});
+async function connectToDatabase() {
+    const db = mysql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME
+    });
 
-db.connect(err => {
-    if (err) throw err;
-    console.log('Conectado com o BD');
-});
+    try {
+        await db.connect(); // Aguarda a conexão
+        console.log('Conectado com o BD');
+        return db; // Retorna a conexão
+    } catch (err) {
+        console.error('Erro ao conectar com o BD:', err.message);
+        process.exit(1);
+    }
+}
 
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
@@ -223,6 +229,6 @@ app.use((err, req, res, next) => {
     res.status(500).json({ Message: "Erro no servidor" });
 });
 
-app.listen(8088, () => {
+app.listen(process.env.PORT, () => {
     console.log("Rodando na porta: 8088");
 });
