@@ -33,7 +33,7 @@ function Livros() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8088/Livros")
+    fetch("http://https://tcc-umber.vercel.app/api/Livros")
       .then(res => res.json())
       .then(data => {
         setData(data);
