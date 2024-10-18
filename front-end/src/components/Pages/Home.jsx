@@ -10,7 +10,7 @@ function Home() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8088')
+    axios.get('https://tcc-umber.vercel.app/api')
       .then(res => {
         if (res.data.Message === 'Success') {
           setAuth(true);
@@ -27,7 +27,7 @@ function Home() {
 
   const [Historia, setHistoria] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8088/Historia")
+    fetch("http://https://tcc-umber.vercel.app/api/Historia")
       .then(res => res.json())
       .then(Historia => setHistoria(Historia))
       .catch(err => console.error("Erro ao buscar dados:", err));
@@ -35,7 +35,7 @@ function Home() {
 
   const [Biografias, setBiografias] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8088/Biografias")
+    fetch("https://tcc-umber.vercel.app/api/Biografias")
       .then(res => res.json())
       .then(Biografias => setBiografias(Biografias))
       .catch(err => console.error("Erro ao buscar dados:", err));
