@@ -115,7 +115,7 @@ app.get('/livros/:id/disponibilidade', (req, res) => {
   });
   
 
-app.get('/api/Livros', (req, res) => {
+app.get('/Livros', (req, res) => {
     const sql = "SELECT * FROM livro;";
     db.query(sql, (err, data) => {
         if (err) return res.json(err);
