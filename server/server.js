@@ -231,3 +231,5 @@ app.use((err, req, res, next) => {
 app.listen(process.env.PORT, () => {
     console.log("Rodando na porta: 8088");
 });
+
+module.exports = app; 
